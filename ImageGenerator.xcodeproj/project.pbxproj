@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F1DE1B9B905A26B4E7559AF /* Pods_ImageGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A946333A12AA43B4919F9A1 /* Pods_ImageGenerator.framework */; };
+		E87F2093254BBD4B001A77DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F2092254BBD4B001A77DF /* AppDelegate.m */; };
+		E87F2096254BBD4B001A77DF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F2095254BBD4B001A77DF /* SceneDelegate.m */; };
+		E87F2099254BBD4B001A77DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F2098254BBD4B001A77DF /* ViewController.m */; };
+		E87F209C254BBD4B001A77DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87F209A254BBD4B001A77DF /* Main.storyboard */; };
+		E87F209E254BBD4E001A77DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E87F209D254BBD4E001A77DF /* Assets.xcassets */; };
+		E87F20A1254BBD4E001A77DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87F209F254BBD4E001A77DF /* LaunchScreen.storyboard */; };
+		E87F20A4254BBD4E001A77DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F20A3254BBD4E001A77DF /* main.m */; };
+		E87F20AF254BBDE5001A77DF /* LYShapeImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F20AC254BBDE5001A77DF /* LYShapeImageGenerator.m */; };
+		E87F20B0254BBDE5001A77DF /* LYImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F20AD254BBDE5001A77DF /* LYImageGenerator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A946333A12AA43B4919F9A1 /* Pods_ImageGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ADC1B3C0B314AF91624FED5 /* Pods-ImageGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGenerator.release.xcconfig"; path = "Target Support Files/Pods-ImageGenerator/Pods-ImageGenerator.release.xcconfig"; sourceTree = "<group>"; };
+		E87F208E254BBD4A001A77DF /* ImageGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E87F2091254BBD4B001A77DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E87F2092254BBD4B001A77DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E87F2094254BBD4B001A77DF /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		E87F2095254BBD4B001A77DF /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		E87F2097254BBD4B001A77DF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E87F2098254BBD4B001A77DF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E87F209B254BBD4B001A77DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E87F209D254BBD4E001A77DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E87F20A0254BBD4E001A77DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E87F20A2254BBD4E001A77DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E87F20A3254BBD4E001A77DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E87F20AB254BBDE4001A77DF /* LYImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYImageGenerator.h; sourceTree = "<group>"; };
+		E87F20AC254BBDE5001A77DF /* LYShapeImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYShapeImageGenerator.m; sourceTree = "<group>"; };
+		E87F20AD254BBDE5001A77DF /* LYImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYImageGenerator.m; sourceTree = "<group>"; };
+		E87F20AE254BBDE5001A77DF /* LYShapeImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYShapeImageGenerator.h; sourceTree = "<group>"; };
+		EE5A65CE61D57EF1870BE73D /* Pods-ImageGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGenerator.debug.xcconfig"; path = "Target Support Files/Pods-ImageGenerator/Pods-ImageGenerator.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E87F208B254BBD4A001A77DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F1DE1B9B905A26B4E7559AF /* Pods_ImageGenerator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		133ABD56C1368C81D10132A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A946333A12AA43B4919F9A1 /* Pods_ImageGenerator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		561AA2046FFA04208B3FB43C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE5A65CE61D57EF1870BE73D /* Pods-ImageGenerator.debug.xcconfig */,
+				6ADC1B3C0B314AF91624FED5 /* Pods-ImageGenerator.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E87F2085254BBD4A001A77DF = {
+			isa = PBXGroup;
+			children = (
+				E87F2090254BBD4B001A77DF /* ImageGenerator */,
+				E87F208F254BBD4A001A77DF /* Products */,
+				561AA2046FFA04208B3FB43C /* Pods */,
+				133ABD56C1368C81D10132A4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E87F208F254BBD4A001A77DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E87F208E254BBD4A001A77DF /* ImageGenerator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E87F2090254BBD4B001A77DF /* ImageGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				E87F2091254BBD4B001A77DF /* AppDelegate.h */,
+				E87F2092254BBD4B001A77DF /* AppDelegate.m */,
+				E87F2094254BBD4B001A77DF /* SceneDelegate.h */,
+				E87F2095254BBD4B001A77DF /* SceneDelegate.m */,
+				E87F2097254BBD4B001A77DF /* ViewController.h */,
+				E87F2098254BBD4B001A77DF /* ViewController.m */,
+				E87F20AB254BBDE4001A77DF /* LYImageGenerator.h */,
+				E87F20AD254BBDE5001A77DF /* LYImageGenerator.m */,
+				E87F20AE254BBDE5001A77DF /* LYShapeImageGenerator.h */,
+				E87F20AC254BBDE5001A77DF /* LYShapeImageGenerator.m */,
+				E87F209A254BBD4B001A77DF /* Main.storyboard */,
+				E87F209D254BBD4E001A77DF /* Assets.xcassets */,
+				E87F209F254BBD4E001A77DF /* LaunchScreen.storyboard */,
+				E87F20A2254BBD4E001A77DF /* Info.plist */,
+				E87F20A3254BBD4E001A77DF /* main.m */,
+			);
+			path = ImageGenerator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E87F208D254BBD4A001A77DF /* ImageGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E87F20A7254BBD4E001A77DF /* Build configuration list for PBXNativeTarget "ImageGenerator" */;
+			buildPhases = (
+				8E7DD37F2AEB21DD331ADD27 /* [CP] Check Pods Manifest.lock */,
+				E87F208A254BBD4A001A77DF /* Sources */,
+				E87F208B254BBD4A001A77DF /* Frameworks */,
+				E87F208C254BBD4A001A77DF /* Resources */,
+				B64BB20F82F7327967D9D155 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageGenerator;
+			productName = ImageGenerator;
+			productReference = E87F208E254BBD4A001A77DF /* ImageGenerator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E87F2086254BBD4A001A77DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					E87F208D254BBD4A001A77DF = {
+						CreatedOnToolsVersion = 12.1;
+					};
+				};
+			};
+			buildConfigurationList = E87F2089254BBD4A001A77DF /* Build configuration list for PBXProject "ImageGenerator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E87F2085254BBD4A001A77DF;
+			productRefGroup = E87F208F254BBD4A001A77DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E87F208D254BBD4A001A77DF /* ImageGenerator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E87F208C254BBD4A001A77DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E87F20A1254BBD4E001A77DF /* LaunchScreen.storyboard in Resources */,
+				E87F209E254BBD4E001A77DF /* Assets.xcassets in Resources */,
+				E87F209C254BBD4B001A77DF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E7DD37F2AEB21DD331ADD27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImageGenerator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B64BB20F82F7327967D9D155 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageGenerator/Pods-ImageGenerator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageGenerator/Pods-ImageGenerator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageGenerator/Pods-ImageGenerator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E87F208A254BBD4A001A77DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E87F2099254BBD4B001A77DF /* ViewController.m in Sources */,
+				E87F2093254BBD4B001A77DF /* AppDelegate.m in Sources */,
+				E87F20B0254BBDE5001A77DF /* LYImageGenerator.m in Sources */,
+				E87F20AF254BBDE5001A77DF /* LYShapeImageGenerator.m in Sources */,
+				E87F20A4254BBD4E001A77DF /* main.m in Sources */,
+				E87F2096254BBD4B001A77DF /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E87F209A254BBD4B001A77DF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E87F209B254BBD4B001A77DF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E87F209F254BBD4E001A77DF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E87F20A0254BBD4E001A77DF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E87F20A5254BBD4E001A77DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E87F20A6254BBD4E001A77DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E87F20A8254BBD4E001A77DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE5A65CE61D57EF1870BE73D /* Pods-ImageGenerator.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ImageGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.draw.ImageGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E87F20A9254BBD4E001A77DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ADC1B3C0B314AF91624FED5 /* Pods-ImageGenerator.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ImageGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.draw.ImageGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E87F2089254BBD4A001A77DF /* Build configuration list for PBXProject "ImageGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E87F20A5254BBD4E001A77DF /* Debug */,
+				E87F20A6254BBD4E001A77DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E87F20A7254BBD4E001A77DF /* Build configuration list for PBXNativeTarget "ImageGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E87F20A8254BBD4E001A77DF /* Debug */,
+				E87F20A9254BBD4E001A77DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E87F2086254BBD4A001A77DF /* Project object */;
+}
