@@ -119,7 +119,7 @@ public enum LYImageGenerator {
         
         let path = UIBezierPath(roundedRect: CGRect(origin: .zero, size: size), cornerRadius: size.height/2.0)
         var circlePath = path.cgPath
-        if (borderWidth > 0) {
+        if borderWidth > 0 {
             let scaleTransform = CGAffineTransform(scaleX: (size.width - 2*borderWidth)/size.width, y: (size.height - 2*borderWidth)/size.height)
             let moveTransform = CGAffineTransform.init(translationX: borderWidth, y: borderWidth)
             var transform = scaleTransform.concatenating(moveTransform)
@@ -132,7 +132,7 @@ public enum LYImageGenerator {
             var rect = CGRect(origin: .zero, size: size)
             circleImage?.draw(in: CGRect(origin: .zero, size: size))
             ctx.saveGState()
-            if (borderWidth > 0) {
+            if borderWidth > 0 {
                 rect = rect.insetBy(dx: borderWidth, dy: borderWidth)
             }
             // 创建 inner shadow 的镂空路径
@@ -198,7 +198,7 @@ public enum LYImageGenerator {
         var idx = 0
         let safeGetNextElement: () -> NSString = {
             var elem: String = ""
-            if (components.count > idx) {
+            if components.count > idx {
                 elem = components[idx]
                 idx += 1
             }
@@ -208,7 +208,7 @@ public enum LYImageGenerator {
             var width: Float = 0, height: Float = 0
             width = safeGetNextElement().floatValue
             height = safeGetNextElement().floatValue
-            if (width == 0 || height == 0) {
+            if width == 0 || height == 0 {
                 return false
             }
             sizePt.pointee = CGSize(width: CGFloat(width), height: CGFloat(height))
@@ -223,7 +223,7 @@ public enum LYImageGenerator {
         
         if let borderWidthPt = borderWidthPt {
             let borderWidth = safeGetNextElement().floatValue
-            if (borderWidth > 0) {
+            if borderWidth > 0 {
                 borderWidthPt.pointee = CGFloat(borderWidth)
                 let hexString = safeGetNextElement() as String
                 if let sencondColorPt = sencondColorPt, hexString.count > 0 {
@@ -247,7 +247,7 @@ public enum LYImageGenerator {
         var idx = 0
         let safeGetNextElement: () -> NSString = {
             var elem: String = ""
-            if (components.count > idx) {
+            if components.count > idx {
                 elem = components[idx]
                 idx += 1
             }
@@ -257,7 +257,7 @@ public enum LYImageGenerator {
             var width: Float = 0, height: Float = 0
             width = safeGetNextElement().floatValue
             height = safeGetNextElement().floatValue
-            if (width == 0 || height == 0) {
+            if width == 0 || height == 0 {
                 return false
             }
             sizePt.pointee = CGSize(width: CGFloat(width), height: CGFloat(height))
@@ -297,7 +297,7 @@ public enum LYImageGenerator {
             var red: Int = 0, green = 0, blue = 0
             var alpha: CGFloat = 1.0
             // 带alpha
-            if (hexString.count == 8) {
+            if hexString.count == 8 {
                 red = Int((rgba >> 24) & 0xFF)
                 green = Int((rgba >> 16) & 0xFF)
                 blue = Int((rgba >> 8) & 0xFF)

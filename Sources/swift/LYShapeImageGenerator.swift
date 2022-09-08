@@ -24,10 +24,10 @@ struct LYShapeImageGenerator {
     }
     
     static func triangle(size: CGSize, borderWidth: CGFloat) -> UIBezierPath {
-        let width = size.width;
-        let height = size.height;
+        let width = size.width
+        let height = size.height
         
-        let path = UIBezierPath();
+        let path = UIBezierPath()
         path.move(to: CGPoint(x: CGFloat(borderWidth), y: height))
         path.addLine(to: CGPoint(x: width, y: height))
         path.addLine(to: CGPoint(x: width/2.0, y: borderWidth))
@@ -64,9 +64,9 @@ struct LYShapeImageGenerator {
             ctx.strokePath()
         }
         
-        let image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
-        return image;
+        return image
     }
 }
