@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "LYImageGenerator.h"
+#import "ImageGenerator-Swift.h"
 
 @interface ViewController ()
 

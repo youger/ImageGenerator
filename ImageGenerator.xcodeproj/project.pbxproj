@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,11 @@
 		E87F209E254BBD4E001A77DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E87F209D254BBD4E001A77DF /* Assets.xcassets */; };
 		E87F20A1254BBD4E001A77DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87F209F254BBD4E001A77DF /* LaunchScreen.storyboard */; };
 		E87F20A4254BBD4E001A77DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F20A3254BBD4E001A77DF /* main.m */; };
-		E87F20AF254BBDE5001A77DF /* LYShapeImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F20AC254BBDE5001A77DF /* LYShapeImageGenerator.m */; };
-		E87F20B0254BBDE5001A77DF /* LYImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F20AD254BBDE5001A77DF /* LYImageGenerator.m */; };
+		E8F0544E28C99679003C1544 /* LYImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F0544828C99678003C1544 /* LYImageGenerator.m */; };
+		E8F0544F28C99679003C1544 /* LYShapeImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F0544B28C99678003C1544 /* LYShapeImageGenerator.m */; };
+		E8F0545028C99679003C1544 /* LYImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0544D28C99678003C1544 /* LYImageGenerator.swift */; };
+		E8F0545228C996C9003C1544 /* LYShapeImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0545128C996C9003C1544 /* LYShapeImageGenerator.swift */; };
+		E8F0545428C9F664003C1544 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0545328C9F664003C1544 /* SwiftViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +37,13 @@
 		E87F20A0254BBD4E001A77DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E87F20A2254BBD4E001A77DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E87F20A3254BBD4E001A77DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E87F20AB254BBDE4001A77DF /* LYImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYImageGenerator.h; sourceTree = "<group>"; };
-		E87F20AC254BBDE5001A77DF /* LYShapeImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYShapeImageGenerator.m; sourceTree = "<group>"; };
-		E87F20AD254BBDE5001A77DF /* LYImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYImageGenerator.m; sourceTree = "<group>"; };
-		E87F20AE254BBDE5001A77DF /* LYShapeImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYShapeImageGenerator.h; sourceTree = "<group>"; };
+		E8F0544828C99678003C1544 /* LYImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYImageGenerator.m; sourceTree = "<group>"; };
+		E8F0544928C99678003C1544 /* LYShapeImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYShapeImageGenerator.h; sourceTree = "<group>"; };
+		E8F0544A28C99678003C1544 /* LYImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYImageGenerator.h; sourceTree = "<group>"; };
+		E8F0544B28C99678003C1544 /* LYShapeImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYShapeImageGenerator.m; sourceTree = "<group>"; };
+		E8F0544D28C99678003C1544 /* LYImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYImageGenerator.swift; sourceTree = "<group>"; };
+		E8F0545128C996C9003C1544 /* LYShapeImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYShapeImageGenerator.swift; sourceTree = "<group>"; };
+		E8F0545328C9F664003C1544 /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		EE5A65CE61D57EF1870BE73D /* Pods-ImageGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGenerator.debug.xcconfig"; path = "Target Support Files/Pods-ImageGenerator/Pods-ImageGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +73,6 @@
 				EE5A65CE61D57EF1870BE73D /* Pods-ImageGenerator.debug.xcconfig */,
 				6ADC1B3C0B314AF91624FED5 /* Pods-ImageGenerator.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				E87F2090254BBD4B001A77DF /* ImageGenerator */,
+				E8F0544628C99678003C1544 /* Sources */,
 				E87F208F254BBD4A001A77DF /* Products */,
 				561AA2046FFA04208B3FB43C /* Pods */,
 				133ABD56C1368C81D10132A4 /* Frameworks */,
@@ -98,10 +104,7 @@
 				E87F2095254BBD4B001A77DF /* SceneDelegate.m */,
 				E87F2097254BBD4B001A77DF /* ViewController.h */,
 				E87F2098254BBD4B001A77DF /* ViewController.m */,
-				E87F20AB254BBDE4001A77DF /* LYImageGenerator.h */,
-				E87F20AD254BBDE5001A77DF /* LYImageGenerator.m */,
-				E87F20AE254BBDE5001A77DF /* LYShapeImageGenerator.h */,
-				E87F20AC254BBDE5001A77DF /* LYShapeImageGenerator.m */,
+				E8F0545328C9F664003C1544 /* SwiftViewController.swift */,
 				E87F209A254BBD4B001A77DF /* Main.storyboard */,
 				E87F209D254BBD4E001A77DF /* Assets.xcassets */,
 				E87F209F254BBD4E001A77DF /* LaunchScreen.storyboard */,
@@ -109,6 +112,35 @@
 				E87F20A3254BBD4E001A77DF /* main.m */,
 			);
 			path = ImageGenerator;
+			sourceTree = "<group>";
+		};
+		E8F0544628C99678003C1544 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E8F0544728C99678003C1544 /* oc */,
+				E8F0544C28C99678003C1544 /* swift */,
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		E8F0544728C99678003C1544 /* oc */ = {
+			isa = PBXGroup;
+			children = (
+				E8F0544A28C99678003C1544 /* LYImageGenerator.h */,
+				E8F0544828C99678003C1544 /* LYImageGenerator.m */,
+				E8F0544928C99678003C1544 /* LYShapeImageGenerator.h */,
+				E8F0544B28C99678003C1544 /* LYShapeImageGenerator.m */,
+			);
+			path = oc;
+			sourceTree = "<group>";
+		};
+		E8F0544C28C99678003C1544 /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				E8F0544D28C99678003C1544 /* LYImageGenerator.swift */,
+				E8F0545128C996C9003C1544 /* LYShapeImageGenerator.swift */,
+			);
+			path = swift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,10 +257,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E87F2099254BBD4B001A77DF /* ViewController.m in Sources */,
+				E8F0545028C99679003C1544 /* LYImageGenerator.swift in Sources */,
 				E87F2093254BBD4B001A77DF /* AppDelegate.m in Sources */,
-				E87F20B0254BBDE5001A77DF /* LYImageGenerator.m in Sources */,
-				E87F20AF254BBDE5001A77DF /* LYShapeImageGenerator.m in Sources */,
+				E8F0545428C9F664003C1544 /* SwiftViewController.swift in Sources */,
+				E8F0544F28C99679003C1544 /* LYShapeImageGenerator.m in Sources */,
+				E8F0544E28C99679003C1544 /* LYImageGenerator.m in Sources */,
 				E87F20A4254BBD4E001A77DF /* main.m in Sources */,
+				E8F0545228C996C9003C1544 /* LYShapeImageGenerator.swift in Sources */,
 				E87F2096254BBD4B001A77DF /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +416,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.draw.ImageGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_SWIFT_SYMBOLS = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -399,6 +436,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.draw.ImageGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_SWIFT_SYMBOLS = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
