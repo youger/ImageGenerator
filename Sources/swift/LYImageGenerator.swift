@@ -1,5 +1,5 @@
 import UIKit
-import YYWebImage
+import SDWebImage
 
 public enum LYImageGenerator {
     
@@ -314,11 +314,13 @@ public enum LYImageGenerator {
     }
     
     static func getCacheImage(_ key: String) -> UIImage? {
-        return YYImageCache.shared().getImageForKey(key)
+        return SDImageCache.shared.imageFromCache(forKey: key)
+        //return YYImageCache.shared().getImageForKey(key)
     }
     
     static func cacheImage(_ image: UIImage?, key: String) {
-        YYImageCache.shared().setImage(image, imageData: nil, forKey: key, with: .memory)
+        SDImageCache.shared.store(image, forKey: key, toDisk: false)
+        //YYImageCache.shared().setImage(image, imageData: nil, forKey: key, with: .memory)
     }
 }
 

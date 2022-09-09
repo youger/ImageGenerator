@@ -5,5 +5,6 @@ use_frameworks!
 target 'ImageGenerator' do
   
   pod 'YYWebImage'
+  pod 'SDWebImage'
     
 end
