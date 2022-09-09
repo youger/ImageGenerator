@@ -1,9 +1,11 @@
 import UIKit
 import SDWebImage
 
-public enum LYImageGenerator {
+public struct LYImageGenerator {
     
-    static func gradientImage(_ key: String) -> UIImage? {
+    public init() {}
+    
+    public static func gradientImage(_ key: String) -> UIImage? {
         let imageKey = "gradient_\(key)"
         var image: UIImage? = getCacheImage(imageKey)
         guard image == nil else {
@@ -30,7 +32,7 @@ public enum LYImageGenerator {
         return image
     }
     
-    static func intersectLine(_ key: String) -> UIImage? {
+    public static func intersectLine(_ key: String) -> UIImage? {
         let imageKey = "interserect_\(key)"
         var image: UIImage? = getCacheImage(imageKey)
         guard image == nil else {
@@ -61,7 +63,7 @@ public enum LYImageGenerator {
         return image
     }
     
-    static func borderCircle(_ key: String) -> UIImage? {
+    public static func borderCircle(_ key: String) -> UIImage? {
         let imageKey = "border_\(key)"
         var image: UIImage? = getCacheImage(imageKey)
         guard image == nil else {
@@ -78,7 +80,7 @@ public enum LYImageGenerator {
         return image
     }
     
-    static func cirle(_ key: String) -> UIImage? {
+    public static func cirle(_ key: String) -> UIImage? {
         let imageKey = key
         var image: UIImage? = getCacheImage(imageKey)
         guard image == nil else {
@@ -95,7 +97,7 @@ public enum LYImageGenerator {
         return image
     }
     
-    static func circle(_ key: String, with shadow: String) -> UIImage? {
+    public static func circle(_ key: String, with shadow: String) -> UIImage? {
         let imageKey = key + shadow
         var image: UIImage? = getCacheImage(imageKey)
         guard image == nil else {
@@ -155,7 +157,7 @@ public enum LYImageGenerator {
         return image
     }
     
-    static func popover(size: CGSize, triangleSize: CGSize, triangleInsets: UIEdgeInsets, cornerRadius: CGFloat, fillColor: UIColor?) -> UIImage? {
+    public static func popover(size: CGSize, triangleSize: CGSize, triangleInsets: UIEdgeInsets, cornerRadius: CGFloat, fillColor: UIColor?) -> UIImage? {
         let path = popoverPath(size: size, triangleSize: triangleSize, offsetInsets: triangleInsets, cornerRadius: cornerRadius)
         let image = LYShapeImageGenerator.shapeImage(path: path.cgPath, size: size, fillColor: fillColor, borderColor: nil, borderWidth: 0)
         return image
@@ -274,7 +276,7 @@ public enum LYImageGenerator {
         return true
     }
     
-    static func generateImage(size: CGSize, drawClosure: @escaping (CGContext)->Void) -> UIImage? {
+    public static func generateImage(size: CGSize, drawClosure: @escaping (CGContext)->Void) -> UIImage? {
         let scale = UIScreen.main.scale
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         
@@ -286,7 +288,7 @@ public enum LYImageGenerator {
         return image
     }
 
-    static func color(with hexString: String) -> UIColor {
+    public static func color(with hexString: String) -> UIColor {
         // abcdef00 || 2b2b2b
         if(hexString.count == 6 || hexString.count == 8){
             var rgba: UInt64 = 0
@@ -324,7 +326,7 @@ public enum LYImageGenerator {
     }
 }
 
-extension CGContext {
+public extension CGContext {
     func drawGradient(points: [CGPoint], colors: [CGColor]) {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let start = points.first ?? .zero

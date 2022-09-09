@@ -9,8 +9,10 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-struct LYShapeImageGenerator {
-
+public struct LYShapeImageGenerator {
+    
+    public init() {}
+    
     static func circle(size: CGSize, fillColor: UIColor?, borderColor: UIColor?, borderWidth: CGFloat = 1) -> UIImage? {
         let path = UIBezierPath(roundedRect: CGRect(origin: .zero, size: size), cornerRadius: size.height/2)
         let circleImage = shapeImage(path: path.cgPath, size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth)
