@@ -80,7 +80,7 @@ public struct LYImageGenerator {
         return image
     }
     
-    public static func cirle(_ key: String) -> UIImage? {
+    public static func circle(_ key: String) -> UIImage? {
         let imageKey = key
         var image: UIImage? = getCacheImage(imageKey)
         guard image == nil else {
@@ -97,7 +97,7 @@ public struct LYImageGenerator {
         return image
     }
     
-    public static func circle(_ key: String, with shadow: String) -> UIImage? {
+    public static func circle(_ key: String, shadow: String) -> UIImage? {
         let imageKey = key + shadow
         var image: UIImage? = getCacheImage(imageKey)
         guard image == nil else {
@@ -110,7 +110,7 @@ public struct LYImageGenerator {
             return nil
         }
         
-        let circleImage: UIImage? = cirle(key)
+        let circleImage: UIImage? = circle(key)
     
         var shadowOffset: CGSize = .zero
         var shadowColor: UIColor = .clear

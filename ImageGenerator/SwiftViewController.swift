@@ -18,7 +18,7 @@ class SwiftViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _imageView0.image = LYImageGenerator.cirle("70_70_07B222_3_F7B222")
+        _imageView0.image = LYImageGenerator.circle("70_70_07B222_3_F7B222")
         _imageView1.image = LYImageGenerator.borderCircle("70_70_07B333_5")
         _imageView2.image = LYImageGenerator.intersectLine("60_60_07B333_5")
         _imageView3.image = LYImageGenerator.gradientImage("70_70_0B7200_2_FFFFFF")
