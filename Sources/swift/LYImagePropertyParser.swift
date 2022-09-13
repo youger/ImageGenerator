@@ -11,52 +11,8 @@ enum LYShape {
     case circle, rectangle, triangle, gradient
 }
 
-func scanRectangle(_ key: String?, borderWidthPt: UnsafeMutablePointer<CGFloat>?, cornerRadiusPt: UnsafeMutablePointer<CGFloat>? = nil, firstColorPt: UnsafeMutablePointer<UIColor>?, sencondColorPt: UnsafeMutablePointer<UIColor>?) -> (Bool, CGSize) {
-    guard let key = key, key.isEmpty == false else {
-        return (false, .zero)
-    }
-    
-    let components = key.components(separatedBy: "_")
-    guard components.count != 0 else {
-        return (false, .zero)
-    }
-    
-    var idx = 0
-    let safeGetNextElement: () -> NSString = {
-        var elem: String = ""
-        if components.count > idx {
-            elem = components[idx]
-            idx += 1
-        }
-        return elem as NSString
-    }
-    var size: CGSize = .zero
-    var width: Float = 0, height: Float = 0
-    width = safeGetNextElement().floatValue
-    height = safeGetNextElement().floatValue
-    if width == 0 || height == 0 {
-        return (false, .zero)
-    }
-    size = CGSize(width: CGFloat(width), height: CGFloat(height))
-    
-    let color = scanColor(with: safeGetNextElement() as String)
-    if let firstColorPt = firstColorPt {
-        firstColorPt.pointee = color
-    }else if let sencondColorPt = sencondColorPt {
-        sencondColorPt.pointee = color
-    }
-    
-    if let borderWidthPt = borderWidthPt {
-        let borderWidth = safeGetNextElement().floatValue
-        if borderWidth > 0 {
-            borderWidthPt.pointee = CGFloat(borderWidth)
-            let hexString = safeGetNextElement() as String
-            if let sencondColorPt = sencondColorPt, hexString.count > 0 {
-                sencondColorPt.pointee = scanColor(with: hexString)
-            }
-        }
-    }
-    return (true, size)
+func scanRectangle(_ key: String?, borderWidthPt: UnsafeMutablePointer<CGFloat>?, cornerRadiusPt: UnsafeMutablePointer<CGFloat>? = nil, fillColorPt: UnsafeMutablePointer<UIColor>?, borderColorPt: UnsafeMutablePointer<UIColor>?) -> (Bool, CGSize) {
+    return scan(key, shape: .rectangle, bw: borderWidthPt, cr: cornerRadiusPt, color1: fillColorPt, color2: borderColorPt)
 }
 
 func scanGradient(_ key: String?, cornerRadiusPt: UnsafeMutablePointer<CGFloat>?, startColorPt: UnsafeMutablePointer<UIColor>?, endColorPt: UnsafeMutablePointer<UIColor>?) -> (Bool, CGSize) {
@@ -118,9 +74,27 @@ fileprivate func scan(_ key: String?, shape: LYShape, bw borderWidthPt: UnsafeMu
                 }
             }
         }
-        
     case .rectangle:
-        break
+        let color = scanColor(with: safeGetNextElement() as String)
+        if let firstColorPt = firstColorPt {
+            firstColorPt.pointee = color
+        }else if let sencondColorPt = sencondColorPt {
+            sencondColorPt.pointee = color
+        }
+        
+        if let borderWidthPt = borderWidthPt {
+            let borderWidth = safeGetNextElement().floatValue
+            if borderWidth > 0 {
+                borderWidthPt.pointee = CGFloat(borderWidth)
+                let hexString = safeGetNextElement() as String
+                if let sencondColorPt = sencondColorPt, hexString.count > 0 {
+                    sencondColorPt.pointee = scanColor(with: hexString)
+                }
+            }
+        }
+        if let cornerRadiusPt = cornerRadiusPt {
+            cornerRadiusPt.pointee = CGFloat(safeGetNextElement().floatValue)
+        }
     case .triangle:
         break
     case .gradient:

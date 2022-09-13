@@ -69,22 +69,21 @@ public struct LYImageGenerator {
         return image
     }
     
-    public static func rectangle(_ key: String) -> UIImage? {
+    public static func rectangle(_ key: String, corners: UIRectCorner = .allCorners) -> UIImage? {
         let imageKey = key
         var image: UIImage? = getCacheImage(imageKey)
         guard image == nil else {
             return image
         }
-        var borderWidth: CGFloat = 0
+        var borderWidth: CGFloat = 0, cornerRadius: CGFloat = 0
         var size: CGSize = .zero
         var fillColor: UIColor = .clear, borderColor: UIColor = .clear
         var result: Bool = false
-        (result, size) = scanRectangle(key, borderWidthPt: &borderWidth, firstColorPt: &fillColor, sencondColorPt: &borderColor)
+        (result, size) = scanRectangle(key, borderWidthPt: &borderWidth, cornerRadiusPt: &cornerRadius, fillColorPt: &fillColor, borderColorPt: &borderColor)
         guard result else {
             return image
         }
-        image = LYShapeImageGenerator.circle(size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth)
-        cacheImage(image, key: imageKey)
+        image = LYShapeImageGenerator.rectangle(size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth, corners: corners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
         return image
     }
     
