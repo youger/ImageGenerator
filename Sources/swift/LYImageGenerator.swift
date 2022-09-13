@@ -15,9 +15,12 @@ public struct LYImageGenerator {
         var size: CGSize = .zero
         var startColor: UIColor = .white
         var endColor: UIColor = .white
-        if !scan(key, sizePt: &size, borderWidthPt: &cornerRadius, firstColorPt: &startColor, sencondColorPt: &endColor) {
-            return nil
+        var result: Bool = false
+        (result, size) = scanGradient(key, cornerRadiusPt: &cornerRadius, startColorPt: &startColor, endColorPt: &endColor)
+        guard result else {
+            return image
         }
+        
         let path = UIBezierPath.init(roundedRect: CGRect(origin: .zero, size: size), cornerRadius: cornerRadius).cgPath
         let startPoint: CGPoint = .zero
         let endPoint = CGPoint(x: size.width, y: 0)
@@ -42,9 +45,12 @@ public struct LYImageGenerator {
         var lineWidth: CGFloat = 0
         var size: CGSize = .zero
         var lineColor: UIColor = .white
-        if !scan(key, sizePt: &size, borderWidthPt: &lineWidth, firstColorPt: &lineColor, sencondColorPt: nil) {
-            return nil
+        var result: Bool = false
+        (result, size) = scanLine(key, lineWidthPt: &lineWidth, fillColorPt: &lineColor)
+        guard result else {
+            return image
         }
+        
         let margin: CGFloat = lineWidth * 0.5 * sin(Double.pi/4)
         let path = UIBezierPath()
         path.move(to: CGPoint(x: margin, y: margin))
@@ -63,19 +69,21 @@ public struct LYImageGenerator {
         return image
     }
     
-    public static func borderCircle(_ key: String) -> UIImage? {
-        let imageKey = "border_\(key)"
+    public static func rectangle(_ key: String) -> UIImage? {
+        let imageKey = key
         var image: UIImage? = getCacheImage(imageKey)
         guard image == nil else {
             return image
         }
-        var borderWidth: CGFloat = 1
+        var borderWidth: CGFloat = 0
         var size: CGSize = .zero
-        var borderColor: UIColor = .clear
-        if !scan(key, sizePt: &size, borderWidthPt: &borderWidth, firstColorPt: &borderColor, sencondColorPt: nil) {
-            return nil
+        var fillColor: UIColor = .clear, borderColor: UIColor = .clear
+        var result: Bool = false
+        (result, size) = scanRectangle(key, borderWidthPt: &borderWidth, firstColorPt: &fillColor, sencondColorPt: &borderColor)
+        guard result else {
+            return image
         }
-        image = LYShapeImageGenerator.circle(size: size, fillColor: nil, borderColor: borderColor, borderWidth: borderWidth)
+        image = LYShapeImageGenerator.circle(size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth)
         cacheImage(image, key: imageKey)
         return image
     }
@@ -89,10 +97,31 @@ public struct LYImageGenerator {
         var borderWidth: CGFloat = 0
         var size: CGSize = .zero
         var fillColor: UIColor = .clear, borderColor: UIColor = .clear
-        if !scan(key, sizePt: &size, borderWidthPt: &borderWidth, firstColorPt: &fillColor, sencondColorPt: &borderColor) {
-            return nil
+        var result: Bool = false
+        (result, size) = scanCircle(key, borderWidthPt: &borderWidth, fillColorPt: &fillColor, borderColorPt: &borderColor)
+        guard result else {
+            return image
         }
         image = LYShapeImageGenerator.circle(size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth)
+        cacheImage(image, key: imageKey)
+        return image
+    }
+    
+    public static func borderCircle(_ key: String) -> UIImage? {
+        let imageKey = "border_\(key)"
+        var image: UIImage? = getCacheImage(imageKey)
+        guard image == nil else {
+            return image
+        }
+        var borderWidth: CGFloat = 1
+        var size: CGSize = .zero
+        var borderColor: UIColor = .black
+        var result: Bool = false
+        (result, size) = scanCircle(key, borderWidthPt: &borderWidth, fillColorPt: nil, borderColorPt: &borderColor)
+        guard result else {
+            return image
+        }
+        image = LYShapeImageGenerator.circle(size: size, fillColor: nil, borderColor: borderColor, borderWidth: borderWidth)
         cacheImage(image, key: imageKey)
         return image
     }
@@ -106,8 +135,10 @@ public struct LYImageGenerator {
         var borderWidth: CGFloat = 0
         var size: CGSize = .zero
         var fillColor: UIColor = .clear, borderColor: UIColor = .clear
-        if !scan(key, sizePt: &size, borderWidthPt: &borderWidth, firstColorPt: &fillColor, sencondColorPt: &borderColor) {
-            return nil
+        var result: Bool = false
+        (result, size) = scanCircle(key, borderWidthPt: &borderWidth, fillColorPt: &fillColor, borderColorPt: &borderColor)
+        guard result else {
+            return image
         }
         
         let circleImage: UIImage? = circle(key)
@@ -115,7 +146,8 @@ public struct LYImageGenerator {
         var shadowOffset: CGSize = .zero
         var shadowColor: UIColor = .clear
         var opacity: CGFloat = 0,  radius: CGFloat = 0
-        if scanShadow(shadow, sizePt: &shadowOffset, shadowColorPt: &shadowColor, opacityPt: &opacity, radiusPt: &radius) {
+        (result, shadowOffset) = scanShadow(shadow, shadowColorPt: &shadowColor, opacityPt: &opacity, radiusPt: &radius)
+        guard result else {
             return circleImage
         }
         
@@ -132,7 +164,7 @@ public struct LYImageGenerator {
 
         image = generateImage(size: size) { ctx in
             var rect = CGRect(origin: .zero, size: size)
-            circleImage?.draw(in: CGRect(origin: .zero, size: size))
+            circleImage?.draw(in: rect)
             ctx.saveGState()
             if borderWidth > 0 {
                 rect = rect.insetBy(dx: borderWidth, dy: borderWidth)
@@ -187,95 +219,6 @@ public struct LYImageGenerator {
         return path
     }
     
-    static func scan(_ key: String?, sizePt: UnsafeMutablePointer<CGSize>?, borderWidthPt: UnsafeMutablePointer<CGFloat>?, firstColorPt: UnsafeMutablePointer<UIColor>?, sencondColorPt: UnsafeMutablePointer<UIColor>?) -> Bool {
-        guard let key = key, key.isEmpty == false else {
-            return false
-        }
-        
-        let components = key.components(separatedBy: "_")
-        guard components.count != 0 else {
-            return false
-        }
-        
-        var idx = 0
-        let safeGetNextElement: () -> NSString = {
-            var elem: String = ""
-            if components.count > idx {
-                elem = components[idx]
-                idx += 1
-            }
-            return elem as NSString
-        }
-        if let sizePt = sizePt {
-            var width: Float = 0, height: Float = 0
-            width = safeGetNextElement().floatValue
-            height = safeGetNextElement().floatValue
-            if width == 0 || height == 0 {
-                return false
-            }
-            sizePt.pointee = CGSize(width: CGFloat(width), height: CGFloat(height))
-        }
-        
-        let color = LYImageGenerator.color(with: safeGetNextElement() as String)
-        if let firstColorPt = firstColorPt {
-            firstColorPt.pointee = color
-        }else if let sencondColorPt = sencondColorPt {
-            sencondColorPt.pointee = color
-        }
-        
-        if let borderWidthPt = borderWidthPt {
-            let borderWidth = safeGetNextElement().floatValue
-            if borderWidth > 0 {
-                borderWidthPt.pointee = CGFloat(borderWidth)
-                let hexString = safeGetNextElement() as String
-                if let sencondColorPt = sencondColorPt, hexString.count > 0 {
-                    sencondColorPt.pointee = LYImageGenerator.color(with: hexString)
-                }
-            }
-        }
-        return true
-    }
-    
-    static func scanShadow(_ key: String?, sizePt: UnsafeMutablePointer<CGSize>?, shadowColorPt: UnsafeMutablePointer<UIColor>?, opacityPt: UnsafeMutablePointer<CGFloat>?, radiusPt: UnsafeMutablePointer<CGFloat>?) -> Bool {
-        guard let key = key, key.isEmpty == false else {
-            return false
-        }
-        
-        let components = key.components(separatedBy: "_")
-        guard components.count != 0 else {
-            return false
-        }
-        
-        var idx = 0
-        let safeGetNextElement: () -> NSString = {
-            var elem: String = ""
-            if components.count > idx {
-                elem = components[idx]
-                idx += 1
-            }
-            return elem as NSString
-        }
-        if let sizePt = sizePt {
-            var width: Float = 0, height: Float = 0
-            width = safeGetNextElement().floatValue
-            height = safeGetNextElement().floatValue
-            if width == 0 || height == 0 {
-                return false
-            }
-            sizePt.pointee = CGSize(width: CGFloat(width), height: CGFloat(height))
-        }
-        if let shadowColorPt = shadowColorPt {
-            shadowColorPt.pointee = LYImageGenerator.color(with: safeGetNextElement() as String)
-        }
-        if let opacityPt = opacityPt {
-            opacityPt.pointee = CGFloat(safeGetNextElement().floatValue)
-        }
-        if let radiusPt = radiusPt {
-            radiusPt.pointee = CGFloat(safeGetNextElement().floatValue)
-        }
-        return true
-    }
-    
     public static func generateImage(size: CGSize, drawClosure: @escaping (CGContext)->Void) -> UIImage? {
         let scale = UIScreen.main.scale
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
@@ -286,33 +229,6 @@ public struct LYImageGenerator {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
-    }
-
-    public static func color(with hexString: String) -> UIColor {
-        // abcdef00 || 2b2b2b
-        if(hexString.count == 6 || hexString.count == 8){
-            var rgba: UInt64 = 0
-            guard Scanner(string: hexString).scanHexInt64(&rgba) else {
-                return UIColor.white
-            }
-            
-            var red: Int = 0, green = 0, blue = 0
-            var alpha: CGFloat = 1.0
-            // 带alpha
-            if hexString.count == 8 {
-                red = Int((rgba >> 24) & 0xFF)
-                green = Int((rgba >> 16) & 0xFF)
-                blue = Int((rgba >> 8) & 0xFF)
-                alpha = CGFloat(rgba & 0xFF)/255.0
-            }else {
-                red = Int((rgba >> 16) & 0xFF)
-                green = Int((rgba >> 8) & 0xFF)
-                blue = Int(rgba & 0xFF)
-            }
-            return UIColor(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: alpha)
-        }else{
-            return UIColor.white
-        }
     }
     
     static func getCacheImage(_ key: String) -> UIImage? {

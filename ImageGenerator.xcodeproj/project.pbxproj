@@ -15,6 +15,7 @@
 		E87F209E254BBD4E001A77DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E87F209D254BBD4E001A77DF /* Assets.xcassets */; };
 		E87F20A1254BBD4E001A77DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87F209F254BBD4E001A77DF /* LaunchScreen.storyboard */; };
 		E87F20A4254BBD4E001A77DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E87F20A3254BBD4E001A77DF /* main.m */; };
+		E8B0127828CB6559001F9F09 /* LYImagePropertyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B0127728CB6559001F9F09 /* LYImagePropertyParser.swift */; };
 		E8F0544E28C99679003C1544 /* LYImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F0544828C99678003C1544 /* LYImageGenerator.m */; };
 		E8F0544F28C99679003C1544 /* LYShapeImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F0544B28C99678003C1544 /* LYShapeImageGenerator.m */; };
 		E8F0545028C99679003C1544 /* LYImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0544D28C99678003C1544 /* LYImageGenerator.swift */; };
@@ -37,6 +38,7 @@
 		E87F20A0254BBD4E001A77DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E87F20A2254BBD4E001A77DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E87F20A3254BBD4E001A77DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8B0127728CB6559001F9F09 /* LYImagePropertyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYImagePropertyParser.swift; sourceTree = "<group>"; };
 		E8F0544828C99678003C1544 /* LYImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYImageGenerator.m; sourceTree = "<group>"; };
 		E8F0544928C99678003C1544 /* LYShapeImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYShapeImageGenerator.h; sourceTree = "<group>"; };
 		E8F0544A28C99678003C1544 /* LYImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYImageGenerator.h; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E8F0544D28C99678003C1544 /* LYImageGenerator.swift */,
+				E8B0127728CB6559001F9F09 /* LYImagePropertyParser.swift */,
 				E8F0545128C996C9003C1544 /* LYShapeImageGenerator.swift */,
 			);
 			path = swift;
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8B0127828CB6559001F9F09 /* LYImagePropertyParser.swift in Sources */,
 				E87F2099254BBD4B001A77DF /* ViewController.m in Sources */,
 				E8F0545028C99679003C1544 /* LYImageGenerator.swift in Sources */,
 				E87F2093254BBD4B001A77DF /* AppDelegate.m in Sources */,

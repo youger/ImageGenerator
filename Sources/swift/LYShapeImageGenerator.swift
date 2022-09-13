@@ -15,14 +15,20 @@ public struct LYShapeImageGenerator {
     
     static func circle(size: CGSize, fillColor: UIColor?, borderColor: UIColor?, borderWidth: CGFloat = 1) -> UIImage? {
         let path = UIBezierPath(roundedRect: CGRect(origin: .zero, size: size), cornerRadius: size.height/2)
-        let circleImage = shapeImage(path: path.cgPath, size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth)
-        return circleImage
+        let image = shapeImage(path: path.cgPath, size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth)
+        return image
     }
     
     static func triangle(size: CGSize, fillColor: UIColor?, borderColor: UIColor?, borderWidth: CGFloat = 2) -> UIImage? {
         let path = triangle(size: size, borderWidth: borderWidth)
-        let triangleImage = shapeImage(path: path.cgPath, size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth)
-        return triangleImage
+        let image = shapeImage(path: path.cgPath, size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth)
+        return image
+    }
+    
+    static func rectangle(size: CGSize, fillColor: UIColor?, borderColor: UIColor?, borderWidth: CGFloat = 2, corners: UIRectCorner = .allCorners, cornerRadii: CGSize = .zero) -> UIImage? {
+        let path = UIBezierPath.init(roundedRect: CGRect(origin: .zero, size: size), byRoundingCorners: corners, cornerRadii: cornerRadii)
+        let image = shapeImage(path: path.cgPath, size: size, fillColor: fillColor, borderColor: borderColor, borderWidth: borderWidth)
+        return image
     }
     
     static func triangle(size: CGSize, borderWidth: CGFloat) -> UIBezierPath {
